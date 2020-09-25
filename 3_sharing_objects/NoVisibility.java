@@ -13,7 +13,10 @@ public class NoVisibility {
   private static boolean ready;
   private static int number;
 
-  // inner class subclasses Thread
+  /*
+  Because this inner class has access to the variables of the outer class, when
+  ReaderThread is run in another thread it will be able to read them.
+  */
   private static class ReaderThread extends Thread {
     // override run
     public void run() {
